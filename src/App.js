@@ -34,7 +34,7 @@ function App() {
     }, 5000));
     try {
       answerdiv.style.display = "flex";
-      const response = await fetch("http://localhost:3001/api", {
+      const response = await fetch("https://tutotube-backend.onrender.com/api", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
