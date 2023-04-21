@@ -1,5 +1,7 @@
 import './App.css';
 import React, { useState } from 'react'
+import Navbar from './Components/Navbar';
+import Workflow from './Components/Workflow';
 
 function App() {
 
@@ -53,21 +55,7 @@ function App() {
 
   return (
     <div className="app">
-      <div id="navbar">
-        <div id="logo">
-          <img src="logo.png" alt="logo" />
-          <h1>Tutotube</h1>
-        </div>
-        <ul>
-          <li className="active">
-            <a to="#">Home</a>
-          </li>
-          <li><a to="#">Tech</a></li>
-          <li><a to="#">About</a></li>
-          <li><a to="#">Contact</a></li>
-          <li><a to="#">Help</a></li>
-        </ul>
-      </div>
+     <Navbar/>
       <div className="container">
         <h1 className="head">
           Meet <span style={{color:"#ed00eb"}}>Tutotube</span>
@@ -101,6 +89,7 @@ function App() {
           </div>
         </div>
       </div>
+      {/* <Workflow/> */}
     </div>
   );
 }

@@ -19,6 +19,7 @@
     background: black;
     box-shadow: 0px 3px 25px black;
     color: #919191;
+    padding-right: 1rem;
 }
 
 
@@ -33,6 +34,7 @@
     justify-content: center;
     font-weight: 100;
     margin-left: 2rem;
+    cursor: pointer;
 }
 
 /* This styles the logo image to be used in the navbar */
@@ -40,6 +42,7 @@
     height: 40px;
     width: 40px;
     color: #ed00eb;
+    cursor: pointer;
 }
 
 /* This styles the unlisted links in the navbar */
@@ -52,7 +55,7 @@
 /* This changes the appearance of the listed links in the navbar */
 #navbar ul li {
     width: 80px;
-    margin: 0 30px;
+    margin: 0 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -75,6 +78,20 @@
 
 #navbar ul li a:hover {
     color: white;
+}
+
+.tryfree
+{
+    background-color: #292929;
+    border-radius: 5px;
+    color: white;
+    padding: 0.5rem 0.5rem;
+    transition: 0.3s all ease;
+}
+
+.tryfree:hover
+{
+    background-color: #3b3b3b;
 }
 
 .app
@@ -214,4 +231,14 @@
     margin-top: 4px;
     padding: 1rem;
     font-size: 1.2rem;
+}
+
+.workflow
+{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: center;
+    align-content: center;
 }
