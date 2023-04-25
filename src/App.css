@@ -80,8 +80,7 @@
     color: white;
 }
 
-.tryfree
-{
+.tryfree {
     background-color: #292929;
     border-radius: 5px;
     color: white;
@@ -89,13 +88,11 @@
     transition: 0.3s all ease;
 }
 
-.tryfree:hover
-{
+.tryfree:hover {
     background-color: #3b3b3b;
 }
 
-.app
-{
+.app {
     background-color: black;
     display: flex;
     justify-content: center;
@@ -103,8 +100,7 @@
     flex-direction: column;
 }
 
-.container
-{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,8 +108,7 @@
     flex-direction: column;
 }
 
-.head
-{
+.head {
     color: white;
     text-align: center;
     font-size: 4.2rem;
@@ -124,8 +119,7 @@
     margin-bottom: 2rem;
 }
 
-.btn
-{
+.btn {
     color: white;
     background-color: #ed00eb;
     padding: 1rem;
@@ -137,13 +131,11 @@
     transition: 0.4s all ease;
 }
 
-.btn:hover
-{
+.btn:hover {
     background-color: #b300b0;
 }
 
-.main
-{
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,8 +146,7 @@
     position: relative;
 }
 
-.main-img
-{
+.main-img {
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -164,20 +155,18 @@
     top: 10px;
 }
 
-.form
-{
+.form {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.main-p
-{
+.main-p {
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
 }
-.main input
-{
+
+.main input {
     outline: none;
     height: 50px;
     overflow: auto;
@@ -190,8 +179,7 @@
     border-radius: 5px;
 }
 
-.result
-{
+.result {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,8 +188,7 @@
     width: 100%;
 }
 
-.query
-{
+.query {
     display: none;
     width: 100%;
     justify-content: center;
@@ -210,8 +197,7 @@
     position: relative;
 }
 
-.query-img
-{
+.query-img {
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -220,8 +206,7 @@
     right: 265px;
 }
 
-.answer
-{
+.answer {
     display: none;
     border-radius: 5px;
     width: 60%;
@@ -233,12 +218,50 @@
     font-size: 1.2rem;
 }
 
-.workflow
-{
+.workflow {
     padding: 2rem;
     display: flex;
     flex-direction: row;
     color: white;
     justify-content: center;
     align-content: center;
+}
+
+.error{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+}
+
+.error-m {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #f8d7da;
+    border: 2px solid #f5c6cb;
+    color: #721c24;
+    font-weight: 500;
+    z-index: 3;
+}
+
+.closebtn
+{
+    background: none;
+    border: none;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+    margin-left: 30px;
 }

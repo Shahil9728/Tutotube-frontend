@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from 'react'
 import Navbar from './Components/Navbar';
 import Workflow from './Components/Workflow';
+import Error from './Components/Error';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
     "Fetching answer of query...",
     "Please wait...",
   ]);
+  const [valid, setvalid] = useState(false);
 
 
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
@@ -24,8 +26,17 @@ function App() {
 
   const showquery = async (e) => {
     e.preventDefault();
-    const querydiv = document.querySelector('.query');
-    querydiv.style.display = 'flex';
+    if (!validateYoutubeLink(link)) {
+      setvalid(true);
+      setInterval(() => {
+        setvalid(false);
+      }, 5000)
+    }
+    else {
+      setvalid(false);
+      const querydiv = document.querySelector('.query');
+      querydiv.style.display = 'flex';
+    }
   }
 
   const handleform2 = async (e) => {
@@ -53,14 +64,22 @@ function App() {
     }
   }
 
+  function validateYoutubeLink(link) {
+    const youtubeRegex = /^(https?:\/\/)?(www\.)?youtube.com\/watch\?v=([a-zA-Z0-9_-]{11})$/;
+    return youtubeRegex.test(link);
+  }
+
   return (
     <div className="app">
-     <Navbar/>
+      {
+        valid ? (<div className='error'>{<Error message={"Youtube link is not valid"} />}</div>) : (<div></div>)
+      }
+      <Navbar />
       <div className="container">
         <h1 className="head">
-          Meet <span style={{color:"#ed00eb"}}>Tutotube</span>
+          Meet <span style={{ color: "#ed00eb" }}>Tutotube</span>
           , your AI
-          to QA with Youtube Videos<span style={{color:"#ed00eb"}}>.</span>
+          to QA with Youtube Videos<span style={{ color: "#ed00eb" }}>.</span>
         </h1>
         <a href="#main">
           <button className="btn">
