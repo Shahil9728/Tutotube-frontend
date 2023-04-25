@@ -27,12 +27,14 @@ function App() {
   const showquery = async (e) => {
     e.preventDefault();
     if (!validateYoutubeLink(link)) {
+      console.log("Link is not valid")
       setvalid(true);
       setInterval(() => {
         setvalid(false);
       }, 5000)
     }
     else {
+      console.log("Link is valid")
       setvalid(false);
       const querydiv = document.querySelector('.query');
       querydiv.style.display = 'flex';
