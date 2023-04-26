@@ -18,10 +18,17 @@ function App() {
     "Please wait...",
   ]);
   const [valid, setvalid] = useState(false);
-
-
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
+
+
+  const main = () => {
+    window.scrollTo({
+      top: 400,
+      behavior: "smooth"
+    });
+  }
+
 
 
   const showquery = async (e) => {
@@ -83,8 +90,8 @@ function App() {
           , your AI
           to QA with Youtube Videos<span style={{ color: "#ed00eb" }}>.</span>
         </h1>
-        <a href="#main">
-          <button className="btn">
+        <a>
+          <button className="btn" onClick={main}>
             Try YoutubeQA
           </button>
         </a>
@@ -110,7 +117,7 @@ function App() {
           </div>
         </div>
       </div>
-      {/* <Workflow/> */}
+      <Workflow />
     </div>
   );
 }

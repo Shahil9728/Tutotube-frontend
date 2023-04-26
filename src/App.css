@@ -218,14 +218,6 @@
     font-size: 1.2rem;
 }
 
-.workflow {
-    padding: 2rem;
-    display: flex;
-    flex-direction: row;
-    color: white;
-    justify-content: center;
-    align-content: center;
-}
 
 .error{
     position: relative;
@@ -264,4 +256,50 @@
     color: black;
     cursor: pointer;
     margin-left: 30px;
+}
+
+.workflow {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-between;
+    gap: 2rem;
+    align-content: center;
+}
+
+.work-p
+{
+    color: #8f8f8f;
+    width:60%;
+    padding: 2rem;
+}
+
+
+.work-p .head
+{
+    font-size: 3rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    text-align: left;
+}
+
+.work-img
+{
+    padding: 1.3rem 0.5rem 0.2rem 0.5rem;
+    background-color: #292929;
+    border-radius: 30px;
+}
+
+.work-imgp
+{
+    padding-left: 10px;
+}
+
+.work-video
+{
+    border-radius: 30px;
+    width: 100%;
 }
