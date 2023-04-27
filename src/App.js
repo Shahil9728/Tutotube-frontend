@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import Navbar from './Components/Navbar';
 import Workflow from './Components/Workflow';
 import Error from './Components/Error';
+import Card from './Components/Card';
+import Sdata from './Components/Sdata';
+import Footer from './Components/Footer';
 
 function App() {
 
@@ -24,12 +27,9 @@ function App() {
 
   const main = () => {
     window.scrollTo({
-      top: 400,
-      behavior: "smooth"
+      top: 400
     });
   }
-
-
 
   const showquery = async (e) => {
     e.preventDefault();
@@ -90,11 +90,9 @@ function App() {
           , your AI
           to QA with Youtube Videos<span style={{ color: "#ed00eb" }}>.</span>
         </h1>
-        <a>
-          <button className="btn" onClick={main}>
-            Try YoutubeQA
-          </button>
-        </a>
+        <button className="btn" onClick={main}>
+          Try Tutotube
+        </button>
       </div>
       <div className="main" id='main'>
         <p className="main-p">Paste the Youtube Video Here</p>
@@ -118,6 +116,31 @@ function App() {
         </div>
       </div>
       <Workflow />
+      <h1 className='card-head'>Features</h1>
+      <div className="card-div">
+        {
+          Sdata.map((val, index) => {
+            return <Card
+              key={index}
+              imgsrc={val.img}
+              heading={val.heading}
+              para={val.para}
+            />
+          })
+        }
+
+        {/* <Card />
+        <Card />
+        <Card /> */}
+      </div>
+
+      <div className="head experience">
+        Unleash knowledge's power with Tutuotube
+        <button className="btn" onClick={main}>
+          Try Tutotube
+        </button>
+      </div>
+      <Footer/>
     </div>
   );
 }
