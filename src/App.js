@@ -66,6 +66,7 @@ function App() {
       const data = await response.json();
       clearInterval(intervalId);
       setanswer(data.correctans);
+      setquery("");
     } catch (error) {
       console.log(error);
       clearInterval(intervalId);
