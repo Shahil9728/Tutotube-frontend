@@ -320,7 +320,7 @@
 {
     font-size: 3rem;
     margin: 2rem;
-    margin-top: 6rem;
+    margin-top: 10rem;
 }
 
 .experience
@@ -332,5 +332,6 @@
     flex-direction: column;
     gap: 4rem;
     margin: 5rem;
+    margin-top: 8rem;
     margin-bottom: 10rem;
 }
