@@ -51,9 +51,15 @@ function App() {
   const handleform2 = async (e) => {
     console.log(link, query);
     e.preventDefault();
-    setIntervalId(setInterval(() => {
+    let intervalId = setInterval(() => {
       setCurrentMessageIndex((index) => (index + 1) % messages.length);
-    }, 5000));
+    }, 5000);
+
+    setTimeout(() => {
+      clearInterval(intervalId);
+      setanswer("Apologies for any inconvenience caused. Please refresh the webpage as we are currently working on resolving the issue you encountered.")
+      console.log("Interval stopped after 15 seconds.");
+    }, 25000);
     try {
       answerdiv.style.display = "flex";
       const response = await fetch("https://tutotube-backend.onrender.com/api", {
@@ -99,14 +105,14 @@ function App() {
         <p className="main-p">Paste the Youtube Video Here</p>
         <form action="" method="get" className='main' onSubmit={showquery}>
           <input type="text" name="ytdlink" id="" value={link} className="input" placeholder="Paste the Youtube Video link here...." onChange={(e) => setlink(e.target.value)} />
-          <img src="submit.png " alt="Submit" type="submit" className='main-img' />
+          <img src="submit.png " alt="Submit" type="submit" className='main-img' onClick={showquery} />
         </form>
         <div className="result">
           <div className="query">
             <p className="main-p">Enter the question from the video</p>
             <form className="form" onSubmit={handleform2}>
               <input type="text" name="query" value={query} id="" className="input" placeholder="Enter a question.... " onChange={(e) => setquery(e.target.value)} />
-              <img src="submit.png " alt="Submit" type="submit" className='query-img' />
+              <img src="submit.png " alt="Submit" type="submit" className='query-img' onClick={handleform2} />
             </form>
           </div>
           <div className="answer">
@@ -141,7 +147,7 @@ function App() {
           Try Tutotube
         </button>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
