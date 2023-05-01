@@ -6,6 +6,7 @@ import Error from './Components/Error';
 import Card from './Components/Card';
 import Sdata from './Components/Sdata';
 import Footer from './Components/Footer';
+import { CircularProgress } from "@mui/material";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
   const [valid, setvalid] = useState(false);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
+  const [img, setimg] = useState(true);
 
 
   const main = () => {
@@ -51,6 +53,7 @@ function App() {
   const handleform2 = async (e) => {
     console.log(link, query);
     e.preventDefault();
+    setimg(false)
     let intervalId = setInterval(() => {
       setCurrentMessageIndex((index) => (index + 1) % messages.length);
     }, 5000);
@@ -59,6 +62,7 @@ function App() {
       clearInterval(intervalId);
       setanswer("Apologies for any inconvenience caused. Please refresh the webpage as we are currently working on resolving the issue you encountered.")
       console.log("Interval stopped after 15 seconds.");
+      setimg(true)
     }, 25000);
     try {
       answerdiv.style.display = "flex";
@@ -73,6 +77,7 @@ function App() {
       clearInterval(intervalId);
       setanswer(data.correctans);
       setquery("");
+      setimg(true);
     } catch (error) {
       console.log(error);
       clearInterval(intervalId);
@@ -112,7 +117,9 @@ function App() {
             <p className="main-p">Enter the question from the video</p>
             <form className="form" onSubmit={handleform2}>
               <input type="text" name="query" value={query} id="" className="input" placeholder="Enter a question.... " onChange={(e) => setquery(e.target.value)} />
-              <img src="submit.png " alt="Submit" type="submit" className='query-img' onClick={handleform2} />
+              {
+                img ? (<img src="submit.png " alt="Submit" type="submit" className='query-img' onClick={handleform2} />) : (<CircularProgress color="secondary" className='query-img' />)
+              }
             </form>
           </div>
           <div className="answer">
