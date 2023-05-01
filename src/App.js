@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import Navbar from './Components/Navbar';
 import Workflow from './Components/Workflow';
 import Error from './Components/Error';
@@ -37,6 +37,7 @@ function App() {
     e.preventDefault();
     if (!validateYoutubeLink(link)) {
       console.log("Link is not valid")
+      setlink("");
       setvalid(true);
       setInterval(() => {
         setvalid(false);
@@ -93,7 +94,7 @@ function App() {
   return (
     <div className="app">
       {
-        valid ? (<div className='error'>{<Error message={"Youtube link is not valid"} />}</div>) : (<div></div>)
+        valid ? (<div className='error-m'><Error message={"Youtube link is not valid"} /></div>) : (<></>)
       }
       <Navbar />
       <div className="container">
@@ -109,16 +110,16 @@ function App() {
       <div className="main" id='main'>
         <p className="main-p">Paste the Youtube Video Here</p>
         <form action="" method="get" className='main' onSubmit={showquery}>
-          <input type="text" name="ytdlink" id="" value={link} className="input" placeholder="Paste the Youtube Video link here...." onChange={(e) => setlink(e.target.value)} />
-          <img src="submit.png " alt="Submit" type="submit" className='main-img' onClick={showquery} />
+          <input type="text" name="ytdlink" id="" value={link} className="input" placeholder="Paste the Youtube Video link here...." onChange={(e) => setlink(e.target.value)} autoComplete='off' />
+          <button className='main-img'></button>
         </form>
         <div className="result">
           <div className="query">
             <p className="main-p">Enter the question from the video</p>
             <form className="form" onSubmit={handleform2}>
-              <input type="text" name="query" value={query} id="" className="input" placeholder="Enter a question.... " onChange={(e) => setquery(e.target.value)} />
+              <input type="text" name="query" value={query} id="" className="input" placeholder="Enter a question.... " onChange={(e) => setquery(e.target.value)} autoComplete='off' />
               {
-                img ? (<img src="submit.png " alt="Submit" type="submit" className='query-img' onClick={handleform2} />) : (<CircularProgress color="secondary" className='query-img' />)
+                img ? (<button className='query-img'></button>) : (<CircularProgress color="secondary" className='query-img1' />)
               }
             </form>
           </div>

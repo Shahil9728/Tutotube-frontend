@@ -2,11 +2,11 @@ import React from 'react'
 
 const Error = (props) => {
     const close= ()=>{
-        const errordiv = document.querySelector('.error-m');
+        const errordiv = document.querySelector('.error');
         errordiv.style.display = 'none';
     }
     return (
-        <div className="error-m">
+        <div className="error" >
             Error : {props.message}
             <button className='closebtn' onClick={close}>X</button>
         </div>
