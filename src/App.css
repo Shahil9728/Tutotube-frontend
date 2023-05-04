@@ -207,6 +207,7 @@
     top: 60px;
     right: 265px;
 }
+
 .query-img1 {
     width: 30px;
     height: 30px;
@@ -229,7 +230,7 @@
 }
 
 
-.error-m{
+.error-m {
     position: sticky;
     top: 0;
     left: 0;
@@ -254,8 +255,7 @@
     z-index: 3;
 }
 
-.closebtn
-{
+.closebtn {
     background: none;
     border: none;
     font-weight: 700;
@@ -276,42 +276,36 @@
     align-content: center;
 }
 
-.work-p
-{
+.work-p {
     color: #8f8f8f;
-    width:60%;
+    width: 60%;
     padding: 2rem;
 }
 
 
-.work-p .head
-{
+.work-p .head {
     font-size: 3rem;
     padding-left: 0rem;
     padding-right: 0rem;
     text-align: left;
 }
 
-.work-img
-{
+.work-img {
     padding: 1.3rem 0.5rem 0.2rem 0.5rem;
     background-color: #292929;
     border-radius: 30px;
 }
 
-.work-imgp
-{
+.work-imgp {
     padding-left: 10px;
 }
 
-.work-video
-{
+.work-video {
     border-radius: 30px;
     width: 100%;
 }
 
-.card-div
-{
+.card-div {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -322,15 +316,13 @@
     margin-bottom: 10rem;
 }
 
-.card-head
-{
+.card-head {
     font-size: 3rem;
     margin: 2rem;
     margin-top: 10rem;
 }
 
-.experience
-{
+.experience {
     font-size: 3.2rem;
     display: flex;
     justify-content: center;
@@ -340,4 +332,129 @@
     margin: 5rem;
     margin-top: 8rem;
     margin-bottom: 10rem;
+}
+
+
+#navbar-toggle,
+.navbar-toggle-icons {
+    display: none;
+}
+
+.navbar-toggle-label {
+    display: none;
+}
+
+@media (max-width:900px) {
+    .head {
+        font-size: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #navbar #logo {
+        margin-left: 1rem;
+    }
+
+    #navbar {
+        width: 100%;
+        gap: 0px;
+        justify-content: space-between;
+        padding-right: 0rem;
+    }
+
+    #navbar ul {
+        display: none;
+    }
+
+    .navbar-toggle-icons {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .navbar-toggle-icon {
+        height: 2px;
+        width: 20px;
+        background-color: white;
+        margin-right: 15px;
+    }
+
+    #navbar-toggle:checked~.navbar-toggle-label {
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 5rem;
+        background-color: rgb(0, 0, 0);
+        padding: 1rem;
+        gap: 1rem;
+        left: 0;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .navbar-toggle-label li,a {
+        list-style: none;
+        color: white;
+        text-decoration: none;
+    }
+
+
+    .main input {
+        font-size: 0.8rem;
+        height: 40px;
+        padding: 0.5rem;
+        width: 80%;
+    }
+
+    .btn {
+        padding: 0.7rem;
+        font-size: 0.7rem;
+    }
+
+    .main-p
+    {
+        font-size: 1rem;
+    }
+
+    .main-img {
+        background: url(../public/submitb.png) no-repeat;
+        right: 50px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .workflow {
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .work-p {
+        padding: 0.5rem;
+        width: 100%;
+    }
+
+    .work-p p {
+        font-size: 0.8rem;
+    }
+
+    .work-imgp {
+        font-size: 1.8rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .work-p .head {
+        font-size: 2rem;
+    }
+
+    .experience {
+        margin: 2rem;
+    }
+
+    .card-div {
+        flex-direction: column;
+        gap: 8rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }

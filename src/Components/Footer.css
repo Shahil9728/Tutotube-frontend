@@ -40,3 +40,10 @@ button:hover
 {
     color: #ffffff;
 }
+
+@media (max-width:900px) {
+    .terms
+    {
+        display: none;
+    }
+}
