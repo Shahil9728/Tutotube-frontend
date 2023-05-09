@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     return (
@@ -15,21 +16,31 @@ const Navbar = () => {
                 <div className="navbar-toggle-icon"></div>
                 <div className="navbar-toggle-icon"></div>
             </label>
-            <label htmlFor="navbar-toggle" className="navbar-toggle-label">
+            <label htmlFor="navbar-toggle-label" className="navbar-toggle-label">
                 <li className="active">
-                    <a href="#">Home</a>
+                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="/">Home</NavLink>
                 </li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
+                <li>
+                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="pricing">Pricing</NavLink>
+                </li>
+                <li>
+                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="contact">Contact</NavLink></li>
+                <li>
+                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="about">About</NavLink>
+                </li>
             </label>
             <ul>
                 <li className="active">
-                    <a href="#">Home</a>
+                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="/">Home</NavLink>
                 </li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
+                <li>
+                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="pricing">Pricing</NavLink>
+                </li>
+                <li>
+                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="contact">Contact</NavLink></li>
+                <li>
+                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="about">About</NavLink>
+                </li>
             </ul>
             <ul>
                 <li><a href="">Sign In</a></li>
