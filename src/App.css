@@ -8,6 +8,11 @@
     /* overflow: hidden; */
 }
 
+::selection {
+    background-color: #ed00eb;
+    color: black;
+}
+
 #navbar {
     height: 5rem;
     width: 100%;
@@ -393,7 +398,8 @@
         width: 100%;
     }
 
-    .navbar-toggle-label li,a {
+    .navbar-toggle-label li,
+    a {
         list-style: none;
         color: white;
         text-decoration: none;
@@ -412,8 +418,7 @@
         font-size: 0.7rem;
     }
 
-    .main-p
-    {
+    .main-p {
         font-size: 1rem;
     }
 
