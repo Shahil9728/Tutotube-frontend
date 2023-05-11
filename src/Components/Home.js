@@ -94,13 +94,6 @@ function Home() {
       {
         valid ? (<div className='error-m'><Error message={"Youtube link is not valid"} /></div>) : (<></>)
       }
-      {/* <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/pricing" element={<About />} />
-        <Route exact path="/contact" element={<Contact />} />
-        <Route exact path="/about" element={<Services />} />
-      </Routes> */}
       <div className="container">
         <h1 className="head">
           Meet <span style={{ color: "#ed00eb" }}>Tutotube</span>
@@ -147,12 +140,7 @@ function Home() {
             />
           })
         }
-
-        {/* <Card />
-        <Card />
-        <Card /> */}
       </div>
-
       <div className="head experience">
         Unleash knowledge's power with Tutuotube
         <button className="btn" onClick={main}>

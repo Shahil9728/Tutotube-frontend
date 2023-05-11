@@ -6,6 +6,7 @@ import About from './Components/About'
 import Pricing from './Components/Pricing'
 import Contact from './Components/Contact'
 import { Routes, Route } from 'react-router-dom';
+import Signup from './Components/Signup';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/pricing" element={<Pricing />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/about" element={<About />} />
+        <Route exact path="/signup" element={<Signup />} />
       </Routes>
     </div>
   );

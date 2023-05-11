@@ -43,8 +43,12 @@ const Navbar = () => {
                 </li>
             </ul>
             <ul>
-                <li><a href="">Sign In</a></li>
-                <li className='tryfree'><a href="">Try Free</a></li>
+                <li>
+                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="signin">Signin</NavLink>
+                </li>
+                <li className='tryfree'>
+                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="signup">Try Free</NavLink>
+                </li>
             </ul>
         </div>
     )
