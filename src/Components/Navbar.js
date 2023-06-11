@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, user, handleLogout }) => {
+    const [show, setshow] = useState();
+
+    const showcredit = () => {
+        setshow(!show);
+    }
+    var imgsrc;
+    if (user) {
+        imgsrc = user.imgsrc;
+    } else {
+        imgsrc = null;
+    }
     return (
         <div id="navbar">
             <a href="" style={{ textDecoration: "none" }}>
@@ -44,11 +55,26 @@ const Navbar = () => {
             </ul>
             <ul>
                 <li>
-                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="signin">Signin</NavLink>
+                    {!isLoggedIn ? (
+                        <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="signin">Signin</NavLink>
+                    ) : (
+                        <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" onClick={handleLogout}>LogOut</NavLink>
+                    )}
                 </li>
-                <li className='tryfree'>
-                    <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="signup">Try Free</NavLink>
-                </li>
+                {!user ? (
+                    <li className='tryfree'>
+                        <NavLink activeclassname="menu_active" className="nav-link" aria-current="page" to="signup">Try Free</NavLink>
+                    </li>
+                ) : (
+                    <li className='tryfree tryfree-logo' onClick={showcredit}>
+                        <img src={imgsrc} alt="logo" className='tryfree-logo' />
+                        {show && (
+                            <ul className="credit-list">
+                                {user.credits} Credits left
+                            </ul>
+                        )}
+                    </li>
+                )}
             </ul>
         </div>
     )

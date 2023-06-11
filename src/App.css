@@ -93,10 +93,34 @@
     transition: 0.3s all ease;
 }
 
+.tryfree-logo
+{
+    cursor: pointer;
+    width: 40px !important;
+    height: 40px;
+    border-radius: 50% !important;
+    padding: 0.1rem !important;
+}
+
 .tryfree:hover {
     background-color: #3b3b3b;
 }
 
+.credit-list
+{
+    border-radius: 5px;
+    position: absolute;
+    top: 65px;
+    right: 30px;
+    background-color: #3b3b3b;
+    padding: 10px;
+    width: 150px;
+}
+
+.credit-list:hover
+{
+    background-color: #6c6c6c;
+}
 .app {
     background-color: black;
     display: flex;

@@ -7,7 +7,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import axios from 'axios'
 
 
-const Signup = () => {
+const Signin = () => {
     const [show, setshow] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
@@ -32,17 +32,14 @@ const Signup = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:3001/signup', formData);
-            console.log(response.data);
-            if (response.data.redirectUrl) {
-                window.location.href = response.data.redirectUrl;
-            } else {
-                window.location.href = 'http://localhost:3001/error';
-            }
-        } catch (error) {
-            console.error(error);
-        }
+        axios
+            .post('/api/signup', formData)
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     };
 
     return (
@@ -52,10 +49,9 @@ const Signup = () => {
                     <img src="logo.png" alt="" />
                     <h1>Tutotube</h1>
                 </div>
-                <p>Create your Tutotube account</p>
                 <button className="google-signup" onClick={handleGoogleSignup}>
                     <GoogleIcon />
-                    Continue with Google
+                    Sign in with Google
                 </button>
                 <p style={{ fontWeight: "100" }}>
                     or
@@ -80,16 +76,16 @@ const Signup = () => {
                         }
                     </div>
                     <button type="submit" className='signup-submit'>
-                        Continue
+                        Sign in
                     </button>
                 </form>
-                <p style={{ fontWeight: "300" }}>
-                    Already have an account ? &nbsp;
-                    <NavLink className="nav-link" aria-current="page" to="/signin">Signin</NavLink>
+                <p style={{ fontWeight: "200" }}>
+                    No account ? &nbsp;
+                    <NavLink className="nav-link" aria-current="page" to="/signup">Create one</NavLink>
                 </p>
             </div>
         </div>
     )
 }
 
-export default Signup
+export default Signin

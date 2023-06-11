@@ -7,7 +7,7 @@ import Sdata from './Sdata';
 import Footer from './Footer';
 import { CircularProgress } from "@mui/material";
 
-function Home() {
+function Home({ isLoggedIn, user }) {
 
   const [link, setlink] = useState();
   const [query, setquery] = useState();
@@ -95,6 +95,11 @@ function Home() {
         valid ? (<div className='error-m'><Error message={"Youtube link is not valid"} /></div>) : (<></>)
       }
       <div className="container">
+        {user ? (
+          <h1 style={{ marginTop: "20px" }}>Hi, {user.name}</h1>
+        ) : (
+          <p></p>
+        )}
         <h1 className="head">
           Meet <span style={{ color: "#ed00eb" }}>Tutotube</span>
           , your AI
@@ -105,7 +110,7 @@ function Home() {
         </button>
       </div>
       <div className="main" id='main'>
-        <p className="main-p">Paste the Youtube Video Here</p>
+        <p className="main-p">Paste the Youtube Video link Here</p>
         <form action="" method="get" className='main' onSubmit={showquery}>
           <input type="text" name="ytdlink" id="" value={link} className="input" placeholder="Paste the Youtube Video link here...." onChange={(e) => setlink(e.target.value)} autoComplete='off' />
           <button className='main-img'></button>
