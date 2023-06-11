@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/userdata", { withCredentials: true });
+        const response = await axios.get("https://tutotube-backend.onrender.com/userdata", { withCredentials: true });
         const data = response.data;
         if (response.status === 200) {
           setIsLoggedIn(true);
@@ -38,7 +38,7 @@ function App() {
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:3001/logout", { withCredentials: true });
+      await axios.get("https://tutotube-backend.onrender.com/logout", { withCredentials: true });
       setIsLoggedIn(false);
       setUser(null);
     } catch (error) {

@@ -27,18 +27,18 @@ const Signup = () => {
     };
 
     const handleGoogleSignup = async () => {
-        window.location.href = "http://localhost:3001/auth/google";
+        window.location.href = "https://tutotube-backend.onrender.com/auth/google";
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3001/signup', formData);
+            const response = await axios.post('https://tutotube-backend.onrender.com/signup', formData);
             console.log(response.data);
             if (response.data.redirectUrl) {
                 window.location.href = response.data.redirectUrl;
             } else {
-                window.location.href = 'http://localhost:3001/error';
+                window.location.href = 'https://tutotube-backend.onrender.com/error';
             }
         } catch (error) {
             console.error(error);

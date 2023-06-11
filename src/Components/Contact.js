@@ -21,7 +21,7 @@ const Contact = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/contact', formData);
+      const response = await axios.post('https://tutotube-backend.onrender.com/contact', formData);
       const data = response.data;
       console.log(data);
       if (response.data == "Email sent successfully") {

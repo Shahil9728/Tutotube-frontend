@@ -27,7 +27,7 @@ const Signin = () => {
     };
 
     const handleGoogleSignup = async () => {
-        window.location.href = "http://localhost:3001/auth/google";
+        window.location.href = "https://tutotube-backend.onrender.com/auth/google";
     };
 
     const handleSubmit = async (event) => {
